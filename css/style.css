@@ -156,3 +156,93 @@ h2 {
 .label-score {
   margin-bottom: 2rem;
 }
+
+/* Responsive tweaks */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 600px) {
+  header {
+    height: auto;
+    padding: 1.2rem;
+  }
+
+  main {
+    height: auto;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 1.6rem;
+    padding: 1.6rem;
+  }
+
+  .left,
+  .right {
+    width: 100%;
+  }
+
+  .right {
+    font-size: 1.6rem;
+  }
+
+  .message1 {
+    font-size: 3.2rem;
+    height: auto;
+    min-height: 8rem;
+    padding: 1rem 0;
+  }
+
+  .guess {
+    font-size: 2.4rem;
+    width: 100%;
+    max-width: 22rem;
+  }
+
+  .btn {
+    font-size: 1.6rem;
+    padding: 1.2rem 1.6rem;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  header {
+    height: 25vh;
+  }
+
+  main {
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2rem;
+    padding: 2rem;
+  }
+
+  .left,
+  .right {
+    width: 100%;
+    max-width: 60rem;
+  }
+
+  .right {
+    font-size: 1.8rem;
+  }
+
+  .message1 {
+    font-size: 4.8rem;
+    height: auto;
+    min-height: 10rem;
+  }
+
+  .guess {
+    font-size: 3rem;
+    max-width: 28rem;
+  }
+
+  .btn {
+    font-size: 1.8rem;
+    padding: 1.4rem 2rem;
+  }
+}
