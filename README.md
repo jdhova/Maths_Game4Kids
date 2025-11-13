@@ -44,4 +44,4 @@ Open `index.html` in a modern browser (or use a simple static server). Click Sta
 Currently a personal learning project; feel free to fork and experiment.
 
 ## License
-MIT (add LICENSE file if publishing formally).
+ (Jude)
