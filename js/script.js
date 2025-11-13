@@ -35,20 +35,18 @@ import {
      const userInput = document.querySelector('input');
      const img = document.querySelector("img");
 
-    var sound = {
-        win: new Howl({
-            src: ['sounds/win.mp3']
-        }),
-        win1: new Howl({
-            src: ['sounds/win1.mp3']
-        }),
-        fail: new Howl({
-            src: ['sounds/fail.mp3']
-        }),
-        gameOver: new Howl({
-            src: ['sounds/game-over.mp3']
-        })
-        
+    // Create sounds; if Howler isn't available (e.g., CDN blocked), use no-op fallbacks
+    var sound;
+    if (typeof Howl === 'function') {
+        sound = {
+            win: new Howl({ src: ['sounds/win.mp3'] }),
+            win1: new Howl({ src: ['sounds/win1.mp3'] }),
+            fail: new Howl({ src: ['sounds/fail.mp3'] }),
+            gameOver: new Howl({ src: ['sounds/game-over.mp3'] })
+        };
+    } else {
+        const noop = { play: function(){} };
+        sound = { win: noop, win1: noop, fail: noop, gameOver: noop };
     }
      
 
