@@ -4,6 +4,8 @@ import {
     doubleDigitsAddition,
     doubleDigitsSubtraction,
     doubleDigitsSubtractionAdvanced,
+    singleMultiplication,
+    doubleMultiplication,
     singleDevide,
     tripleDigitsAddition,
     tripleDigitSubtractionAdvanced,
@@ -523,8 +525,26 @@ import {
 
 
 
-
-
+    }
+  
     
   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
