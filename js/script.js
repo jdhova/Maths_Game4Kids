@@ -4,8 +4,10 @@ import {
     doubleDigitsAddition,
     doubleDigitsSubtraction,
     doubleDigitsSubtractionAdvanced,
+    singleDevide,
     tripleDigitsAddition,
-    tripleDigitSubtractionAdvanced
+    tripleDigitSubtractionAdvanced,
+    tripleMultiplication
 } from './randoms.js';
 
 // Global Variables
@@ -414,30 +416,30 @@ import {
                 setTimeout(cry, 1000);
                 setTimeout(hideImage, 2000);
     
-            } else if (parseInt(userInput.value) === answer && score >= 15 && score <= 170)
+            } else if (parseInt(userInput.value) === answer && score >= 15 && score <= 20)
 
-//// level 6 level 6 level 6 level 6 level 6 not working stopped here
+//// level 6 level 6 level 6 level 6 level 6
                 {
                     message.innerText = 'Correct!';
                         score += 1;
                         scoreBoard.innerText = score;
                         firstStageSound();
-                        answer = tripleDigitsAddition();
+                        answer = singleMultiplication();
                         setTimeout(best, 1000);
                         setTimeout(hideImage, 2000);
                    
                     
-                } else if (parseInt(userInput.value) !== answer && score >= 23 && score <= 50) {   
+                } else if (parseInt(userInput.value) !== answer && score >= 15 && score <= 20) {   
                     score -= 1;
                     scoreBoard.innerText = score;
         
                     message.innerText = 'Wrong !';
                     sound.fail.play();
-                    answer = doubleDigitsAddition();
+                    answer = singleMultiplication();
                     setTimeout(cry, 1000);
                     setTimeout(hideImage, 2000);
         
-                } else if (parseInt(userInput.value) === answer && score >= 50 && score <= 75)
+                } else if (parseInt(userInput.value) === answer && score >= 20 && score <= 25)
 
 //// level 7 level 7 level 7 level 7 level 7
                     {
@@ -445,73 +447,66 @@ import {
                             score += 1;
                             scoreBoard.innerText = score;
                             firstStageSound();
-                            answer = tripleDigitsAddition();
+                            answer = doubleMultiplication();
                             setTimeout(best, 1000);
                             setTimeout(hideImage, 2000);
-                       
-                        
-                    } else if (parseInt(userInput.value) !== answer && score >= 50 && score <= 75) {   
+
+                    } else if (parseInt(userInput.value) !== answer && score >= 20 && score <= 25) {
                         score -= 1;
                         scoreBoard.innerText = score;
             
                         message.innerText = 'Wrong !';
                         sound.fail.play();
-                            answer = tripleDigitsAddition();
+                            answer = doubleMultiplication();
                         setTimeout(cry, 1000);
                         setTimeout(hideImage, 2000);
             
-                    } else if (parseInt(userInput.value) === answer && score >= 75 && score <= 100)
+                    } else if (parseInt(userInput.value) === answer && score >= 25 && score <= 30)
 
-//// level 8 level 8 level 8 level 8 level 8
+//// level 8 level 8 level 8 level 8 level 8  here
                         {
                             message.innerText = 'Correct!';
                                 score += 1;
                                 scoreBoard.innerText = score;
                                 firstStageSound();
-                                answer = tripleDigitSubtractionAdvanced();
+                                answer = tripleMultiplication();
                                 setTimeout(best, 1000);
                                 setTimeout(hideImage, 2000);
-                           
-                            
-                        } else if (parseInt(userInput.value) !== answer && score >= 75 && score <= 100) {   
+
+                        } else if (parseInt(userInput.value) !== answer && score >= 25 && score <= 30) {
                             score -= 1;
                             scoreBoard.innerText = score;
                 
                             message.innerText = 'Wrong !';
                             sound.fail.play();
-                            answer = tripleDigitSubtractionAdvanced();
+                            answer = tripleMultiplication();
                             setTimeout(cry, 1000);
                             setTimeout(hideImage, 2000);
                 
-                        } else if (parseInt(userInput.value) === answer && score >= 100 && score <= 1130)
+                        } else if (parseInt(userInput.value) === answer && score >= 30 && score <= 35)
 
 //// level 9 level 9 level 9 level 9 level 9
                             {
-                                message.innerText = 'Correct!';
-                                    score += 1;
-                                    scoreBoard.innerText = score;
-                                    firstStageSound();
-                                    generateNum6();
-                                    setTimeout(best, 1000);
-                                    setTimeout(hideImage, 2000);
-                               
-                                
-                            } else if (parseInt(userInput.value) !== answer && score >= 100 && score <= 1130) {   
-                                score -= 1;
+                            message.innerText = 'Correct!';
+                                score += 1;
                                 scoreBoard.innerText = score;
-                    
-                                message.innerText = 'Wrong !';
-                                sound.fail.play();
-                                generateNum6();
-                                setTimeout(cry, 1000);
+                                firstStageSound();
+                                answer = singleDevide();
+                                setTimeout(best, 1000);
                                 setTimeout(hideImage, 2000);
+
+                            } else if (parseInt(userInput.value) !== answer && score >= 30 && score <= 35) {
+                            score -= 1;
+                            scoreBoard.innerText = score;
+                
+                            message.innerText = 'Wrong !';
+                            sound.fail.play();
+                            answer = singleDevide();
+                            setTimeout(cry, 1000);
+                            setTimeout(hideImage, 2000);
                     
                             } 
 
-        
-    
-    
-    }
 
 
 
