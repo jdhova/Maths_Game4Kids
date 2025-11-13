@@ -50,84 +50,91 @@ import {
     }
      
 
-     const generateNum = () => {
+//      const generateNum = () => {
                     
-        let randomNumber1 = Math.floor(Math.random() * 10) + 1;
-        let randomNumber2 = Math.floor(Math.random() * 10) + 1;
-        answer = randomNumber1 + randomNumber2;
-        message1.innerText = `${randomNumber1} ` + '+ ' + `${randomNumber2} = ` ; 
-        userInput.value = '';  
-    }
+//         let randomNumber1 = Math.floor(Math.random() * 10) + 1;
+//         let randomNumber2 = Math.floor(Math.random() * 10) + 1;
+//         answer = randomNumber1 + randomNumber2;
+//         message1.innerText = `${randomNumber1} ` + '+ ' + `${randomNumber2} = ` ; 
+//         userInput.value = '';  
+//     }
+
+    // const generateNum2 = () => {
+
+    //     let randomNumber1 = Math.floor(Math.random() * 10) + 1;
+    //     let randomNumber2 = Math.floor(Math.random() * 10) + 1;
+    //     answer = randomNumber1 > randomNumber2 ? randomNumber1 - randomNumber2 : randomNumber2 - randomNumber1;
+
+    //     randomNumber1 > randomNumber2 ? message1.innerText = `${randomNumber1} ` + '- ' + `${randomNumber2} = ` : message1.innerText = `${randomNumber2} ` + '- ' + `${randomNumber1} = ` ;
+
+    //     userInput.value = '';  
+
+
+    // }
+//         let randomNumber1 = Math.floor(Math.random() * 10) + 1;
+//         let randomNumber2 = Math.floor(Math.random() * 10) + 1;
+//         answer = randomNumber1 > randomNumber2 ? randomNumber1 - randomNumber2 : randomNumber2 - randomNumber1;
+
+//         randomNumber1 > randomNumber2 ? message1.innerText = `${randomNumber1} ` + '- ' + `${randomNumber2} = ` : message1.innerText = `${randomNumber2} ` + '- ' + `${randomNumber1} = ` ;
+
+//         userInput.value = '';  
+
+
+//     }
+
+//     const generateNum3 = () => {
+                    
+//         let randomNumber1 = Math.floor(Math.random() * 10) + 10;
+//         let randomNumber2 = Math.floor(Math.random() * 10) + 1;
+//         answer = randomNumber1 + randomNumber2;
+//         message1.innerText = `${randomNumber1} ` + '+ ' + `${randomNumber2} = ` ; 
+//         userInput.value = '';  
+//     }
+//         // double digits addition
+
+//     // moved to randoms.js: doubleDigitsAddition
+
+    
+//         // double digits Subtraction
+
+//     // moved to randoms.js: doubleDigitsSubtraction
+
+//      // double digits Subtraction Borrowing 
+
+//     // doubleDigitsSubtractionAdvanced imported from randoms.js
     
 
-
-
-    const generateNum2 = () => {
-                    
-        let randomNumber1 = Math.floor(Math.random() * 10) + 1;
-        let randomNumber2 = Math.floor(Math.random() * 10) + 1;
-        answer = randomNumber1 > randomNumber2 ? randomNumber1 - randomNumber2 : randomNumber2 - randomNumber1;
-
-        randomNumber1 > randomNumber2 ? message1.innerText = `${randomNumber1} ` + '- ' + `${randomNumber2} = ` : message1.innerText = `${randomNumber2} ` + '- ' + `${randomNumber1} = ` ;
-
-        userInput.value = '';  
-
-
-    }
-
-    const generateNum3 = () => {
-                    
-        let randomNumber1 = Math.floor(Math.random() * 10) + 10;
-        let randomNumber2 = Math.floor(Math.random() * 10) + 1;
-        answer = randomNumber1 + randomNumber2;
-        message1.innerText = `${randomNumber1} ` + '+ ' + `${randomNumber2} = ` ; 
-        userInput.value = '';  
-    }
-        // double digits addition
-
-    // moved to randoms.js: doubleDigitsAddition
-
-    
-        // double digits Subtraction
-
-    // moved to randoms.js: doubleDigitsSubtraction
-
-     // double digits Subtraction Borrowing 
-
-    // doubleDigitsSubtractionAdvanced imported from randoms.js
-    
-
-// Triple Digit Addision
-    // moved to randoms.js: tripleDigitsAddision
+// // Triple Digit Addision
+//     // moved to randoms.js: tripleDigitsAddision
 
 
 
-// Triple Digit Subtraction
-    // moved to randoms.js: tripleDigitSubtractionAdvanced
+// // Triple Digit Subtraction
+//     // moved to randoms.js: tripleDigitSubtractionAdvanced
 
-// Single Digit Multiplication
-    const generateNum6 = () => {                   
-        let randomNumber1 = Math.floor(Math.random() * 10) + 1;
-        let randomNumber2 = Math.floor(Math.random() * 10) + 1;
-        answer = randomNumber1 * randomNumber2;
-        message1.innerText = `${randomNumber1} ` + ' * ' + `${randomNumber2} = ` ; 
-        userInput.value = '';  
+// // Single Digit Multiplication
+//     const generateNum6 = () => {                   
+//         let randomNumber1 = Math.floor(Math.random() * 10) + 1;
+//         let randomNumber2 = Math.floor(Math.random() * 10) + 1;
+//         answer = randomNumber1 * randomNumber2;
+//         message1.innerText = `${randomNumber1} ` + ' * ' + `${randomNumber2} = ` ; 
+//         userInput.value = '';  
        
-    }
+//     }
 
-// Single Digits Devision Yet to be implemented in If else statment
-    const generateNum7 = () => {
+// // Single Digits Devision Yet to be implemented in If else statment
+//     const generateNum7 = () => {
                     
-        let randomNumber1 = Math.floor(Math.random() * 10) + 1;
-        let randomNumber2 = Math.floor(Math.random() * 10) + 1;
+//         let randomNumber1 = Math.floor(Math.random() * 10) + 1;
+//         let randomNumber2 = Math.floor(Math.random() * 10) + 1;
 
-        answer = randomNumber1 > randomNumber2 ? randomNumber1 * randomNumber2 / randomNumber2 : randomNumber2 * randomNumber1/ randomNumber1;
+//         answer = randomNumber1 > randomNumber2 ? randomNumber1 * randomNumber2 / randomNumber2 : randomNumber2 * randomNumber1/ randomNumber1;
 
-        randomNumber1 > randomNumber2 ? message1.innerText = `${randomNumber1 * randomNumber2} ` + '/ ' + `${randomNumber2} = ` : message1.innerText = `${randomNumber2 * randomNumber1 } ` + '/ ' + `${randomNumber1} = ` ;
-         userInput.value = '';  
+//         randomNumber1 > randomNumber2 ? message1.innerText = `${randomNumber1 * randomNumber2} ` + '/ ' + `${randomNumber2} = ` : message1.innerText = `${randomNumber2 * randomNumber1 } ` + '/ ' + `${randomNumber1} = ` ;
+//          userInput.value = '';  
 
 
-    }
+//     }
 
 
 
@@ -151,7 +158,26 @@ import {
 
     //   document.querySelector('.restartGame').addEventListener('click',  function (){
     //     message.innerText = 'start...!';
-    //     restartGame.style.display = 'none';
+    // Helper: celebration on level milestones
+    const _levelMilestones = new Set([3,5,8,12,15,20,25,30,35]);
+    function levelUpCelebrate() {
+        const overlay = document.getElementById('celebrate');
+        if (!overlay) return;
+        overlay.classList.remove('show');
+        // retrigger animation
+        void overlay.offsetWidth;
+        overlay.classList.add('show');
+        setTimeout(() => overlay.classList.remove('show'), 1600);
+        if (sound && sound.win && typeof sound.win.play === 'function') {
+            sound.win.play();
+        }
+    }
+
+    function maybeLevelUpCelebrate(currentScore) {
+        if (_levelMilestones.has(currentScore)) levelUpCelebrate();
+    }
+
+    // Exported handler; wiring moved to main.js
     //     start.style.display = 'block';
     //     scoreBoard.innerText = 1;
     //     score = 1
@@ -203,7 +229,7 @@ import {
         scoreBoard.innerText = 1;
         score = 1
         userInput.disabled = true;
-       generateNum();  
+       doubleDigitsAddition();  
        // generateNumTripleDigitAddision() 
        //generateNumTripleDigitSubtraction(); 
       
@@ -294,6 +320,7 @@ import {
                 scoreBoard.innerText = score;
                 firstStageSound();
                 answer = doubleDigitsAddition();
+                maybeLevelUpCelebrate(score);
                 // generateNumTripleDigitAddision()
                 //generateNumTripleDigitSubtraction();
                 setTimeout(successImage, 1000);
@@ -328,6 +355,7 @@ import {
                 firstStageSound();
                 secondStageSound();
                 answer = doubleDigitsSubtraction();
+                maybeLevelUpCelebrate(score);
                 setTimeout(successImage2, 1000);
                 setTimeout(hideImage, 2000);
             console.log('activated substracton')
@@ -355,6 +383,7 @@ import {
             firstStageSound();
             thirdStageSound();
             answer = doubleDigitsSubtractionAdvanced(); 
+            maybeLevelUpCelebrate(score);
             setTimeout(mag, 1000);
              setTimeout(hideImage, 2000);
             
@@ -380,6 +409,7 @@ import {
                 scoreBoard.innerText = score;
                 secondStageSound();
                 answer = tripleDigitsAddition();
+                maybeLevelUpCelebrate(score);
                 setTimeout(best, 1000);
                 setTimeout(hideImage, 2000);
 
@@ -402,6 +432,7 @@ import {
                     scoreBoard.innerText = score;
                     firstStageSound();
                     answer = tripleDigitSubtractionAdvanced();
+                    maybeLevelUpCelebrate(score);
                     setTimeout(best, 1000);
                     setTimeout(hideImage, 2000);
                
@@ -425,6 +456,7 @@ import {
                         scoreBoard.innerText = score;
                         firstStageSound();
                         answer = singleMultiplication();
+                        maybeLevelUpCelebrate(score);
                         setTimeout(best, 1000);
                         setTimeout(hideImage, 2000);
                    
@@ -448,6 +480,7 @@ import {
                             scoreBoard.innerText = score;
                             firstStageSound();
                             answer = doubleMultiplication();
+                            maybeLevelUpCelebrate(score);
                             setTimeout(best, 1000);
                             setTimeout(hideImage, 2000);
 
@@ -470,6 +503,7 @@ import {
                                 scoreBoard.innerText = score;
                                 firstStageSound();
                                 answer = tripleMultiplication();
+                                maybeLevelUpCelebrate(score);
                                 setTimeout(best, 1000);
                                 setTimeout(hideImage, 2000);
 
@@ -483,7 +517,7 @@ import {
                             setTimeout(cry, 1000);
                             setTimeout(hideImage, 2000);
                 
-                        } else if (parseInt(userInput.value) === answer && score >= 30 && score <= 35)
+                        } else if (parseInt(userInput.value) === answer && score >= 30 && score <= 350)
 
 //// level 9 level 9 level 9 level 9 level 9
                             {
@@ -492,10 +526,11 @@ import {
                                 scoreBoard.innerText = score;
                                 firstStageSound();
                                 answer = singleDevide();
+                                maybeLevelUpCelebrate(score);
                                 setTimeout(best, 1000);
                                 setTimeout(hideImage, 2000);
 
-                            } else if (parseInt(userInput.value) !== answer && score >= 30 && score <= 35) {
+                            } else if (parseInt(userInput.value) !== answer && score >= 30 && score <= 350) {
                             score -= 1;
                             scoreBoard.innerText = score;
                 

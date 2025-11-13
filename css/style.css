@@ -317,3 +317,45 @@ body::before {
   50% { opacity: 0.9; }
   100% { opacity: 0.6; }
 }
+
+/* Celebration overlay (confetti burst) */
+#celebrate {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  display: none;
+  overflow: hidden;
+  z-index: 9999;
+}
+
+#celebrate.show { display: block; }
+
+#celebrate .confetti {
+  position: absolute;
+  top: -2rem;
+  width: 1rem;
+  height: 1.6rem;
+  opacity: 0.95;
+  border-radius: 0.2rem;
+  animation: confettiFall 1.5s ease-out forwards;
+}
+
+/* Color and horizontal distribution */
+#celebrate .confetti:nth-child(1)  { left: 5%;  background: #ffd93d; transform: rotate(15deg); }
+#celebrate .confetti:nth-child(2)  { left: 12%; background: #ff6b6b; transform: rotate(-10deg); }
+#celebrate .confetti:nth-child(3)  { left: 20%; background: #6ef3a5; transform: rotate(25deg); }
+#celebrate .confetti:nth-child(4)  { left: 28%; background: #fff;     transform: rotate(-20deg); }
+#celebrate .confetti:nth-child(5)  { left: 36%; background: #ffd93d; transform: rotate(8deg); }
+#celebrate .confetti:nth-child(6)  { left: 44%; background: #ff6b6b; transform: rotate(-12deg); }
+#celebrate .confetti:nth-child(7)  { left: 56%; background: #6ef3a5; transform: rotate(12deg); }
+#celebrate .confetti:nth-child(8)  { left: 64%; background: #fff;     transform: rotate(-18deg); }
+#celebrate .confetti:nth-child(9)  { left: 72%; background: #ffd93d; transform: rotate(20deg); }
+#celebrate .confetti:nth-child(10) { left: 80%; background: #ff6b6b; transform: rotate(-5deg); }
+#celebrate .confetti:nth-child(11) { left: 88%; background: #6ef3a5; transform: rotate(16deg); }
+#celebrate .confetti:nth-child(12) { left: 95%; background: #fff;     transform: rotate(-14deg); }
+
+@keyframes confettiFall {
+  0% { transform: translateY(0) rotate(0deg); }
+  60% { transform: translateY(70vh) rotate(180deg); }
+  100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+}
