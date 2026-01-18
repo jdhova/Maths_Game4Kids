@@ -127,4 +127,3 @@ export function singleDevide() {
 	return ans;
 }
 
-singleDevide
