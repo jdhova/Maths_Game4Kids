@@ -33,7 +33,16 @@ import {
      const start = document.querySelector('.start');
     //  const restart = document.querySelector('.reset');
      const userInput = document.querySelector('input');
-     const img = document.querySelector("img");
+    const img = document.querySelector("img");
+    const startMultiplication = document.querySelector('.startMultiplication');
+    const startDivision = document.querySelector('.startDivision');
+      let gameMode = null; // null | 'multiplication'
+      let multiplicationStage = 1; // 1: single, 2: double, 3: triple
+      let stageCorrectCount = 0;   // correct answers within current stage
+      const MULTI_STAGE_TARGET = 25; // correct answers needed per stage
+    // Division-only mode: total questions counter
+    let divisionQuestionCount = 0;
+    const DIVISION_TARGET = 30;
 
     // Create sounds; if Howler isn't available (e.g., CDN blocked), use no-op fallbacks
     var sound;
@@ -204,8 +213,14 @@ import {
         message.innerText = 'Start...!';
         restartGame.style.display = 'block';
         start.style.display = 'none';
+        if (startMultiplication) startMultiplication.style.display = 'none';
+        if (startDivision) startDivision.style.display = 'none';
         scoreBoard.innerText = 1;
         score = 1
+        gameMode = null;
+        multiplicationStage = 1;
+        stageCorrectCount = 0;
+        divisionQuestionCount = 0;
         userInput.disabled = false;
         answer = doubleDigitsAddition();
         // answer = doubleDigitsSubtractionAdvanced();
@@ -224,12 +239,18 @@ import {
         message.innerText = 'Press Start button...!';
         message1.innerText = '';  
         start.style.display = 'block';
+        if (startMultiplication) startMultiplication.style.display = 'block';
+        if (startDivision) startDivision.style.display = 'block';
         restartGame.style.display = 'none';
         userInput.value = '';  
         scoreBoard.innerText = 1;
         score = 1
         userInput.disabled = true;
-       doubleDigitsAddition();  
+        gameMode = null;
+        multiplicationStage = 1;
+        stageCorrectCount = 0;
+        divisionQuestionCount = 0;
+        doubleDigitsAddition();  
        // generateNumTripleDigitAddision() 
        //generateNumTripleDigitSubtraction(); 
       
@@ -237,6 +258,43 @@ import {
     }
         
         );
+
+// START MULTIPLICATION BUTTON FUNCTIONALITY
+    if (startMultiplication) {
+        startMultiplication.addEventListener('click', function() {
+            message.innerText = 'Start Multiplication...!';
+            restartGame.style.display = 'block';
+            start.style.display = 'none';
+            startMultiplication.style.display = 'none';
+            if (startDivision) startDivision.style.display = 'none';
+            scoreBoard.innerText = 1;
+            score = 1;
+            gameMode = 'multiplication';
+            multiplicationStage = 1;
+            stageCorrectCount = 0;
+            divisionQuestionCount = 0;
+            userInput.disabled = false;
+            answer = singleMultiplication();
+        });
+    }
+
+// START DIVISION BUTTON FUNCTIONALITY
+    if (startDivision) {
+        startDivision.addEventListener('click', function () {
+            message.innerText = 'Start Division...!';
+            restartGame.style.display = 'block';
+            start.style.display = 'none';
+            startDivision.style.display = 'none';
+            if (startMultiplication) startMultiplication.style.display = 'none';
+            scoreBoard.innerText = 1;
+            score = 1;
+            gameMode = 'division';
+            divisionQuestionCount = 0;
+            userInput.disabled = false;
+            answer = singleDevide();
+            divisionQuestionCount = 1; // first question shown
+        });
+    }
 
     //    Sound Functions
         function firstStageSound() {
@@ -312,6 +370,93 @@ import {
         if (userInput.value === '') {
        
             message.innerText = 'Please enter a valid number!';
+
+        } else if (gameMode === 'multiplication') {
+            const val = parseInt(userInput.value);
+            const nextQuestion = () => {
+                if (multiplicationStage === 1) return singleMultiplication();
+                if (multiplicationStage === 2) return doubleMultiplication();
+                return tripleMultiplication();
+            };
+
+            if (val === answer) {
+                message.innerText = 'Correct!';
+                score += 1;
+                scoreBoard.innerText = score;
+                firstStageSound();
+                stageCorrectCount += 1;
+
+                // Advance stage after 25 correct answers
+                if (stageCorrectCount >= MULTI_STAGE_TARGET) {
+                    stageCorrectCount = 0;
+                    if (multiplicationStage < 3) {
+                        multiplicationStage += 1;
+                        // Cue stage transition sounds
+                        if (multiplicationStage === 2) secondStageSound();
+                        if (multiplicationStage === 3) thirdStageSound();
+                        message.innerText = 'Stage up! Next multiplication level.';
+                    }
+                }
+
+                answer = nextQuestion();
+                maybeLevelUpCelebrate(score);
+                setTimeout(multiplicationStage === 1 ? successImage : (multiplicationStage === 2 ? successImage2 : best), 1000);
+                setTimeout(hideImage, 2000);
+
+            } else if (val !== answer && score > 0) {
+                score -= 1;
+                scoreBoard.innerText = score;
+                message.innerText = 'Wrong !';
+                sound.fail.play();
+                answer = nextQuestion();
+                setTimeout(cry, 1000);
+                setTimeout(hideImage, 2000);
+
+            } else if (val !== answer && score === 0) {
+                gameOver();
+            }
+            return; // handled multiplication mode
+
+        } else if (gameMode === 'division') {
+            const val = parseInt(userInput.value);
+            if (val === answer) {
+                message.innerText = 'Correct!';
+                score += 1;
+                scoreBoard.innerText = score;
+                firstStageSound();
+
+                if (divisionQuestionCount >= DIVISION_TARGET) {
+                    // Completed division set
+                    message.innerText = 'Division complete!';
+                    userInput.disabled = true;
+                    // Keep restart visible to replay
+                } else {
+                    answer = singleDevide();
+                    divisionQuestionCount += 1;
+                    maybeLevelUpCelebrate(score);
+                    setTimeout(successImage, 1000);
+                    setTimeout(hideImage, 2000);
+                }
+
+            } else if (val !== answer && score > 0) {
+                score -= 1;
+                scoreBoard.innerText = score;
+                message.innerText = 'Wrong !';
+                sound.fail.play();
+                if (divisionQuestionCount >= DIVISION_TARGET) {
+                    message.innerText = 'Division complete!';
+                    userInput.disabled = true;
+                } else {
+                    answer = singleDevide();
+                    divisionQuestionCount += 1;
+                    setTimeout(cry, 1000);
+                    setTimeout(hideImage, 2000);
+                }
+
+            } else if (val !== answer && score === 0) {
+                gameOver();
+            }
+            return; // handled division mode
 
         } else if (parseInt(userInput.value) === answer && score < 3) {
 
